@@ -1,11 +1,12 @@
 package com.sukai.controller;
 
 import com.baomidou.dynamic.datasource.annotation.DS;
+import com.sukai.entity.SysRole;
 import com.sukai.entity.User;
+import com.sukai.mapper.SysRoleMapper;
 import com.sukai.mapper.UserMapper;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import com.sukai.rest.request.QueryWrapper;
+import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
 import java.util.List;
@@ -19,6 +20,8 @@ import java.util.List;
 public class UserController {
     @Resource
     private UserMapper userMapper;
+    @Resource
+    private SysRoleMapper sysRoleMapper;
 
     @GetMapping("/select")
     @DS("slave")
@@ -33,5 +36,11 @@ public class UserController {
         User user = User.builder().id(26L).age(26).email("1710290860@qq.com").name("承苏凯").build();
 
         userMapper.insert(user);
+    }
+
+    @PostMapping("/selectById")
+    @DS("master")
+    public SysRole selectById(@RequestBody QueryWrapper queryWrapper) {
+        return sysRoleMapper.selectById(queryWrapper.getId());
     }
 }
