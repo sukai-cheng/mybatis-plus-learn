@@ -3,6 +3,7 @@ spring:
     dynamic:
       primary: master #设置默认的数据源或者数据源组,默认值即为master
       strict: false #严格匹配数据源,默认false. true未匹配到指定数据源时抛异常,false使用默认数据源
+      # 设置动态数据源
       datasource:
         master:
           url: jdbc:postgresql://localhost:5432/mybatis_learn
@@ -14,4 +15,32 @@ spring:
           username: postgres
           password:
           driver-class-name: org.postgresql.Driver
+  jackson:
+    # 设置日期格式
+    date-format: yyyy-MM-dd HH:mm:ss
+    serialization:
+      # 格式化输出
+      indent-output: true
+      # 忽略无法转换的对象
+      fail-on-empty-beans: false
+      # 默认只序列话非空的属性
+    default-property-inclusion: non_empty
+    # 允许对象忽略json中不存在的属性
+    deserialization:
+      fail-on-unknown-properties: false
+    parser:
+      # 允许出现特殊字符和转义符
+      allow-unquoted-control-chars: true
+      # 允许出现单引号
+      allow-single-quotes: true
+mybatis-plus:
+  # 配置Mapper.xml映射文件
+  mapper-locations: classpath*:/mapper/*Mapper.xml
+  # 配置MyBatis数据返回类型别名（默认别名是类名）
+  type-aliases-package: com.sukai.entity
+
+# MyBatis SQL打印(方法接口所在的包，不是Mapper.xml所在的包)
+logging:
+  level:
+    com.sukai.mapper: debug
 
