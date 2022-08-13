@@ -15,6 +15,8 @@ import java.io.Serializable;
 @NoArgsConstructor
 public class CountryRequest implements Serializable {
 
+    private Long id;
+
     private String countryCode;
 
     private String countryCurrency;

@@ -25,7 +25,12 @@ public class CountryController {
     }
 
     @PostMapping("/saveOne")
-    public int saveOne(@RequestBody CountryRequest countryRequest){
+    public int saveOne(@RequestBody CountryRequest countryRequest) {
         return countryService.insert(countryRequest);
+    }
+
+    @PostMapping("/updateOne")
+    public int updateOne(@RequestBody CountryRequest countryRequest) {
+        return countryService.update(countryRequest);
     }
 }

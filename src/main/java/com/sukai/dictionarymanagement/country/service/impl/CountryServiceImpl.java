@@ -5,7 +5,7 @@ import com.sukai.dictionarymanagement.country.entity.D403Country;
 import com.sukai.dictionarymanagement.country.mapper.D403CountryMapper;
 import com.sukai.dictionarymanagement.country.request.CountryRequest;
 import com.sukai.dictionarymanagement.country.service.CountryService;
-import org.springframework.beans.BeanUtils;
+import com.sukai.utils.CopyUtil;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
@@ -29,10 +29,14 @@ public class CountryServiceImpl implements CountryService {
     @Override
     public int insert(CountryRequest countryRequest) {
 
-        CountryDomain countryDomain = new CountryDomain();
-        BeanUtils.copyProperties(countryRequest, countryDomain);
+        CountryDomain countryDomain = CopyUtil.copy(countryRequest, CountryDomain.class);
         return countryMapper.insert(countryDomain);
     }
 
+    @Override
+    public int update(CountryRequest countryRequest) {
+        CountryDomain countryDomain = CopyUtil.copy(countryRequest, CountryDomain.class);
+        return countryMapper.updateByPrimaryKey(countryDomain);
+    }
 
 }

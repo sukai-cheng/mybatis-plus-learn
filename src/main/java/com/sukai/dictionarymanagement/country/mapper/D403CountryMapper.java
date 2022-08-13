@@ -18,7 +18,7 @@ public interface D403CountryMapper {
 
     int updateByPrimaryKeySelective(D403Country record);
 
-    int updateByPrimaryKey(D403Country record);
+    int updateByPrimaryKey(CountryDomain record);
 
     List<D403Country> findAll();
 

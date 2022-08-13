@@ -14,6 +14,9 @@ import java.io.Serializable;
 @NoArgsConstructor
 @AllArgsConstructor
 public class CountryDomain implements Serializable {
+
+    private Long id;
+
     private String countryCode;
 
     private String countryCurrency;
