@@ -134,4 +134,10 @@
             country_name_et  = #{countryNameEt,jdbcType=VARCHAR}
         where id = #{id,jdbcType=BIGINT}
     </update>
+
+    <select id="findByCountryCode" resultMap="BaseResultMap" parameterType="string">
+        select *
+        from d403_country
+        where country_code = #{countryCode,jdbcType=VARCHAR}
+    </select>
 </mapper>

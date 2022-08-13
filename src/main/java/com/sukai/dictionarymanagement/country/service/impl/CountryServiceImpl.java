@@ -27,6 +27,11 @@ public class CountryServiceImpl implements CountryService {
     }
 
     @Override
+    public D403Country findByCountryName(String countryName) {
+        return countryMapper.findByCountryCode(countryName);
+    }
+
+    @Override
     public int insert(CountryRequest countryRequest) {
 
         CountryDomain countryDomain = CopyUtil.copy(countryRequest, CountryDomain.class);
@@ -37,6 +42,11 @@ public class CountryServiceImpl implements CountryService {
     public int update(CountryRequest countryRequest) {
         CountryDomain countryDomain = CopyUtil.copy(countryRequest, CountryDomain.class);
         return countryMapper.updateByPrimaryKey(countryDomain);
+    }
+
+    @Override
+    public int delete(CountryRequest countryRequest) {
+        return countryMapper.deleteByPrimaryKey(countryRequest.getId());
     }
 
 }

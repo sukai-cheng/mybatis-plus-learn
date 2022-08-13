@@ -1,5 +1,6 @@
 package com.sukai.dictionarymanagement.country.controller;
 
+import com.sukai.configuration.HttpResult;
 import com.sukai.dictionarymanagement.country.entity.D403Country;
 import com.sukai.dictionarymanagement.country.request.CountryRequest;
 import com.sukai.dictionarymanagement.country.service.CountryService;
@@ -32,5 +33,15 @@ public class CountryController {
     @PostMapping("/updateOne")
     public int updateOne(@RequestBody CountryRequest countryRequest) {
         return countryService.update(countryRequest);
+    }
+
+    @PostMapping("/deleteOne")
+    public int deleteOne(@RequestBody CountryRequest countryRequest) {
+        return countryService.delete(countryRequest);
+    }
+
+    @PostMapping("/findByCountryName")
+    public HttpResult<D403Country> findByCountryName(@RequestBody CountryRequest countryRequest) {
+        return HttpResult.success(countryService.findByCountryName(countryRequest.getCountryCode()));
     }
 }

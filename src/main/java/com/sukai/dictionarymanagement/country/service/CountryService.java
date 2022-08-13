@@ -12,7 +12,11 @@ import java.util.List;
 public interface CountryService {
     List<D403Country> findAll();
 
+    D403Country findByCountryName(String countryName);
+
     int insert(CountryRequest countryRequest);
 
     int update(CountryRequest countryRequest);
+
+    int delete(CountryRequest countryRequest);
 }

@@ -22,4 +22,6 @@ public interface D403CountryMapper {
 
     List<D403Country> findAll();
 
+    D403Country findByCountryCode(String countryCode);
+
 }
