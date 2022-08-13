@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.sukai.dictionarymanagement.province.mapper.D404ProvinceMapper">
+    <resultMap id="BaseResultMap" type="com.sukai.dictionarymanagement.province.entity.D404Province">
+        <!--@mbg.generated-->
+        <!--@Table d404_province-->
+        <result column="id" jdbcType="BIGINT" property="id"/>
+        <result column="province_code" jdbcType="VARCHAR" property="provinceCode"/>
+        <result column="province_name_cn" jdbcType="VARCHAR" property="provinceNameCn"/>
+        <result column="province_name_dj" jdbcType="VARCHAR" property="provinceNameDj"/>
+        <result column="province_name_en" jdbcType="VARCHAR" property="provinceNameEn"/>
+        <result column="province_name_et" jdbcType="VARCHAR" property="provinceNameEt"/>
+        <result column="province_start_date" jdbcType="TIMESTAMP" property="provinceStartDate"/>
+        <result column="province_stop_date" jdbcType="TIMESTAMP" property="provinceStopDate"/>
+        <result column="country_code" jdbcType="VARCHAR" property="countryCode"/>
+        <result column="province_name_ur" jdbcType="VARCHAR" property="provinceNameUr"/>
+    </resultMap>
+    <sql id="Base_Column_List">
+        <!--@mbg.generated-->
+        id,
+        province_code,
+        province_name_cn,
+        province_name_dj,
+        province_name_en,
+        province_name_et,
+        province_start_date,
+        province_stop_date,
+        country_code,
+        province_name_ur
+    </sql>
+    <insert id="insert" parameterType="com.sukai.dictionarymanagement.province.entity.D404Province">
+        <!--@mbg.generated-->
+        insert into d404_province (id, province_code, province_name_cn,
+                                   province_name_dj, province_name_en, province_name_et,
+                                   province_start_date, province_stop_date,
+                                   country_code, province_name_ur)
+        values (#{id,jdbcType=BIGINT}, #{provinceCode,jdbcType=VARCHAR}, #{provinceNameCn,jdbcType=VARCHAR},
+                #{provinceNameDj,jdbcType=VARCHAR}, #{provinceNameEn,jdbcType=VARCHAR},
+                #{provinceNameEt,jdbcType=VARCHAR},
+                #{provinceStartDate,jdbcType=TIMESTAMP}, #{provinceStopDate,jdbcType=TIMESTAMP},
+                #{countryCode,jdbcType=VARCHAR}, #{provinceNameUr,jdbcType=VARCHAR})
+    </insert>
+    <insert id="insertSelective" parameterType="com.sukai.dictionarymanagement.province.entity.D404Province">
+        <!--@mbg.generated-->
+        insert into d404_province
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="id != null">
+                id,
+            </if>
+            <if test="provinceCode != null">
+                province_code,
+            </if>
+            <if test="provinceNameCn != null">
+                province_name_cn,
+            </if>
+            <if test="provinceNameDj != null">
+                province_name_dj,
+            </if>
+            <if test="provinceNameEn != null">
+                province_name_en,
+            </if>
+            <if test="provinceNameEt != null">
+                province_name_et,
+            </if>
+            <if test="provinceStartDate != null">
+                province_start_date,
+            </if>
+            <if test="provinceStopDate != null">
+                province_stop_date,
+            </if>
+            <if test="countryCode != null">
+                country_code,
+            </if>
+            <if test="provinceNameUr != null">
+                province_name_ur,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="id != null">
+                #{id,jdbcType=BIGINT},
+            </if>
+            <if test="provinceCode != null">
+                #{provinceCode,jdbcType=VARCHAR},
+            </if>
+            <if test="provinceNameCn != null">
+                #{provinceNameCn,jdbcType=VARCHAR},
+            </if>
+            <if test="provinceNameDj != null">
+                #{provinceNameDj,jdbcType=VARCHAR},
+            </if>
+            <if test="provinceNameEn != null">
+                #{provinceNameEn,jdbcType=VARCHAR},
+            </if>
+            <if test="provinceNameEt != null">
+                #{provinceNameEt,jdbcType=VARCHAR},
+            </if>
+            <if test="provinceStartDate != null">
+                #{provinceStartDate,jdbcType=TIMESTAMP},
+            </if>
+            <if test="provinceStopDate != null">
+                #{provinceStopDate,jdbcType=TIMESTAMP},
+            </if>
+            <if test="countryCode != null">
+                #{countryCode,jdbcType=VARCHAR},
+            </if>
+            <if test="provinceNameUr != null">
+                #{provinceNameUr,jdbcType=VARCHAR},
+            </if>
+        </trim>
+    </insert>
+
+    <select id="findAll" resultMap="BaseResultMap">
+        select *
+        from d404_province;
+    </select>
+</mapper>

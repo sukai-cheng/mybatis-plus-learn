@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.sukai.dictionarymanagement.region.mapper.CoreRegionMapper">
+  <resultMap id="BaseResultMap" type="com.sukai.dictionarymanagement.region.entity.Region">
+    <!--@mbg.generated-->
+    <!--@Table core_region-->
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="region_code" jdbcType="VARCHAR" property="regionCode" />
+    <result column="region_name_cn" jdbcType="VARCHAR" property="regionNameCn" />
+    <result column="region_name_en" jdbcType="VARCHAR" property="regionNameEn" />
+    <result column="region_start_date" jdbcType="TIMESTAMP" property="regionStartDate" />
+    <result column="region_stop_date" jdbcType="TIMESTAMP" property="regionStopDate" />
+    <result column="province_code" jdbcType="VARCHAR" property="provinceCode" />
+    <result column="region_name_ur" jdbcType="VARCHAR" property="regionNameUr" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!--@mbg.generated-->
+    id, region_code, region_name_cn, region_name_en, region_start_date, region_stop_date, 
+    province_code, region_name_ur
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    <!--@mbg.generated-->
+    select 
+    <include refid="Base_Column_List" />
+    from core_region
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    <!--@mbg.generated-->
+    delete from core_region
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="com.sukai.dictionarymanagement.region.entity.Region">
+    <!--@mbg.generated-->
+    insert into core_region (id, region_code, region_name_cn, 
+      region_name_en, region_start_date, region_stop_date, 
+      province_code, region_name_ur)
+    values (#{id,jdbcType=BIGINT}, #{regionCode,jdbcType=VARCHAR}, #{regionNameCn,jdbcType=VARCHAR}, 
+      #{regionNameEn,jdbcType=VARCHAR}, #{regionStartDate,jdbcType=TIMESTAMP}, #{regionStopDate,jdbcType=TIMESTAMP}, 
+      #{provinceCode,jdbcType=VARCHAR}, #{regionNameUr,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.sukai.dictionarymanagement.region.entity.Region">
+    <!--@mbg.generated-->
+    insert into core_region
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="regionCode != null">
+        region_code,
+      </if>
+      <if test="regionNameCn != null">
+        region_name_cn,
+      </if>
+      <if test="regionNameEn != null">
+        region_name_en,
+      </if>
+      <if test="regionStartDate != null">
+        region_start_date,
+      </if>
+      <if test="regionStopDate != null">
+        region_stop_date,
+      </if>
+      <if test="provinceCode != null">
+        province_code,
+      </if>
+      <if test="regionNameUr != null">
+        region_name_ur,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=BIGINT},
+      </if>
+      <if test="regionCode != null">
+        #{regionCode,jdbcType=VARCHAR},
+      </if>
+      <if test="regionNameCn != null">
+        #{regionNameCn,jdbcType=VARCHAR},
+      </if>
+      <if test="regionNameEn != null">
+        #{regionNameEn,jdbcType=VARCHAR},
+      </if>
+      <if test="regionStartDate != null">
+        #{regionStartDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="regionStopDate != null">
+        #{regionStopDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="provinceCode != null">
+        #{provinceCode,jdbcType=VARCHAR},
+      </if>
+      <if test="regionNameUr != null">
+        #{regionNameUr,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.sukai.dictionarymanagement.region.entity.Region">
+    <!--@mbg.generated-->
+    update core_region
+    <set>
+      <if test="regionCode != null">
+        region_code = #{regionCode,jdbcType=VARCHAR},
+      </if>
+      <if test="regionNameCn != null">
+        region_name_cn = #{regionNameCn,jdbcType=VARCHAR},
+      </if>
+      <if test="regionNameEn != null">
+        region_name_en = #{regionNameEn,jdbcType=VARCHAR},
+      </if>
+      <if test="regionStartDate != null">
+        region_start_date = #{regionStartDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="regionStopDate != null">
+        region_stop_date = #{regionStopDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="provinceCode != null">
+        province_code = #{provinceCode,jdbcType=VARCHAR},
+      </if>
+      <if test="regionNameUr != null">
+        region_name_ur = #{regionNameUr,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.sukai.dictionarymanagement.region.entity.Region">
+    <!--@mbg.generated-->
+    update core_region
+    set region_code = #{regionCode,jdbcType=VARCHAR},
+      region_name_cn = #{regionNameCn,jdbcType=VARCHAR},
+      region_name_en = #{regionNameEn,jdbcType=VARCHAR},
+      region_start_date = #{regionStartDate,jdbcType=TIMESTAMP},
+      region_stop_date = #{regionStopDate,jdbcType=TIMESTAMP},
+      province_code = #{provinceCode,jdbcType=VARCHAR},
+      region_name_ur = #{regionNameUr,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+</mapper>

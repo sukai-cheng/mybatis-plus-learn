@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.sukai.dictionarymanagement.country.mapper.D403CountryMapper">
+    <resultMap id="BaseResultMap" type="com.sukai.dictionarymanagement.country.entity.D403Country">
+        <!--@mbg.generated-->
+        <!--@Table d403_country-->
+        <id column="id" jdbcType="BIGINT" property="id"/>
+        <result column="country_code" jdbcType="VARCHAR" property="countryCode"/>
+        <result column="country_currency" jdbcType="VARCHAR" property="countryCurrency"/>
+        <result column="country_name_cn" jdbcType="VARCHAR" property="countryNameCn"/>
+        <result column="country_name_dj" jdbcType="VARCHAR" property="countryNameDj"/>
+        <result column="country_name_en" jdbcType="VARCHAR" property="countryNameEn"/>
+        <result column="country_name_et" jdbcType="VARCHAR" property="countryNameEt"/>
+    </resultMap>
+    <sql id="Base_Column_List">
+        <!--@mbg.generated-->
+        id,
+        country_code,
+        country_currency,
+        country_name_cn,
+        country_name_dj,
+        country_name_en,
+        country_name_et
+    </sql>
+    <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+        <!--@mbg.generated-->
+        select
+        <include refid="Base_Column_List"/>
+        from d403_country
+        where id = #{id,jdbcType=BIGINT}
+    </select>
+    <select id="findAll" resultMap="BaseResultMap">
+        select *
+        from d403_country;
+    </select>
+    <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+        <!--@mbg.generated-->
+        delete
+        from d403_country
+        where id = #{id,jdbcType=BIGINT}
+    </delete>
+    <insert id="insert" parameterType="com.sukai.dictionarymanagement.country.domain.CountryDomain">
+        <!--@mbg.generated-->
+        insert into d403_country (country_code, country_currency,
+                                  country_name_cn, country_name_dj, country_name_en,
+                                  country_name_et)
+        values (#{countryCode,jdbcType=VARCHAR}, #{countryCurrency,jdbcType=VARCHAR},
+                #{countryNameCn,jdbcType=VARCHAR}, #{countryNameDj,jdbcType=VARCHAR}, #{countryNameEn,jdbcType=VARCHAR},
+                #{countryNameEt,jdbcType=VARCHAR})
+    </insert>
+    <insert id="insertSelective" parameterType="com.sukai.dictionarymanagement.country.entity.D403Country">
+        <!--@mbg.generated-->
+        insert into d403_country
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="id != null">
+                id,
+            </if>
+            <if test="countryCode != null">
+                country_code,
+            </if>
+            <if test="countryCurrency != null">
+                country_currency,
+            </if>
+            <if test="countryNameCn != null">
+                country_name_cn,
+            </if>
+            <if test="countryNameDj != null">
+                country_name_dj,
+            </if>
+            <if test="countryNameEn != null">
+                country_name_en,
+            </if>
+            <if test="countryNameEt != null">
+                country_name_et,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="id != null">
+                #{id,jdbcType=BIGINT},
+            </if>
+            <if test="countryCode != null">
+                #{countryCode,jdbcType=VARCHAR},
+            </if>
+            <if test="countryCurrency != null">
+                #{countryCurrency,jdbcType=VARCHAR},
+            </if>
+            <if test="countryNameCn != null">
+                #{countryNameCn,jdbcType=VARCHAR},
+            </if>
+            <if test="countryNameDj != null">
+                #{countryNameDj,jdbcType=VARCHAR},
+            </if>
+            <if test="countryNameEn != null">
+                #{countryNameEn,jdbcType=VARCHAR},
+            </if>
+            <if test="countryNameEt != null">
+                #{countryNameEt,jdbcType=VARCHAR},
+            </if>
+        </trim>
+    </insert>
+    <update id="updateByPrimaryKeySelective" parameterType="com.sukai.dictionarymanagement.country.entity.D403Country">
+        <!--@mbg.generated-->
+        update d403_country
+        <set>
+            <if test="countryCode != null">
+                country_code = #{countryCode,jdbcType=VARCHAR},
+            </if>
+            <if test="countryCurrency != null">
+                country_currency = #{countryCurrency,jdbcType=VARCHAR},
+            </if>
+            <if test="countryNameCn != null">
+                country_name_cn = #{countryNameCn,jdbcType=VARCHAR},
+            </if>
+            <if test="countryNameDj != null">
+                country_name_dj = #{countryNameDj,jdbcType=VARCHAR},
+            </if>
+            <if test="countryNameEn != null">
+                country_name_en = #{countryNameEn,jdbcType=VARCHAR},
+            </if>
+            <if test="countryNameEt != null">
+                country_name_et = #{countryNameEt,jdbcType=VARCHAR},
+            </if>
+        </set>
+        where id = #{id,jdbcType=BIGINT}
+    </update>
+    <update id="updateByPrimaryKey" parameterType="com.sukai.dictionarymanagement.country.entity.D403Country">
+        <!--@mbg.generated-->
+        update d403_country
+        set country_code     = #{countryCode,jdbcType=VARCHAR},
+            country_currency = #{countryCurrency,jdbcType=VARCHAR},
+            country_name_cn  = #{countryNameCn,jdbcType=VARCHAR},
+            country_name_dj  = #{countryNameDj,jdbcType=VARCHAR},
+            country_name_en  = #{countryNameEn,jdbcType=VARCHAR},
+            country_name_et  = #{countryNameEt,jdbcType=VARCHAR}
+        where id = #{id,jdbcType=BIGINT}
+    </update>
+</mapper>
