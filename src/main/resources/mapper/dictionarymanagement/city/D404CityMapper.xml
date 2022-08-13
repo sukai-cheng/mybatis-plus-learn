@@ -1,102 +1,110 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.sukai.dictionarymanagement.city.mapper.D404CityMapper">
-  <resultMap id="BaseResultMap" type="com.sukai.dictionarymanagement.city.entity.D404City">
-    <!--@mbg.generated-->
-    <!--@Table d404_city-->
-    <result column="id" jdbcType="BIGINT" property="id" />
-    <result column="city_code" jdbcType="VARCHAR" property="cityCode" />
-    <result column="city_name_cn" jdbcType="VARCHAR" property="cityNameCn" />
-    <result column="city_name_dj" jdbcType="VARCHAR" property="cityNameDj" />
-    <result column="city_name_en" jdbcType="VARCHAR" property="cityNameEn" />
-    <result column="city_name_et" jdbcType="VARCHAR" property="cityNameEt" />
-    <result column="city_start_date" jdbcType="TIMESTAMP" property="cityStartDate" />
-    <result column="city_stop_date" jdbcType="TIMESTAMP" property="cityStopDate" />
-    <result column="region_code" jdbcType="VARCHAR" property="regionCode" />
-    <result column="city_name_ur" jdbcType="VARCHAR" property="cityNameUr" />
-  </resultMap>
-  <sql id="Base_Column_List">
-    <!--@mbg.generated-->
-    id, city_code, city_name_cn, city_name_dj, city_name_en, city_name_et, city_start_date, 
-    city_stop_date, region_code, city_name_ur
-  </sql>
-  <insert id="insert" parameterType="com.sukai.dictionarymanagement.city.entity.D404City">
-    <!--@mbg.generated-->
-    insert into d404_city (id, city_code, city_name_cn, 
-      city_name_dj, city_name_en, city_name_et, 
-      city_start_date, city_stop_date, region_code, 
-      city_name_ur)
-    values (#{id,jdbcType=BIGINT}, #{cityCode,jdbcType=VARCHAR}, #{cityNameCn,jdbcType=VARCHAR}, 
-      #{cityNameDj,jdbcType=VARCHAR}, #{cityNameEn,jdbcType=VARCHAR}, #{cityNameEt,jdbcType=VARCHAR}, 
-      #{cityStartDate,jdbcType=TIMESTAMP}, #{cityStopDate,jdbcType=TIMESTAMP}, #{regionCode,jdbcType=VARCHAR}, 
-      #{cityNameUr,jdbcType=VARCHAR})
-  </insert>
-  <insert id="insertSelective" parameterType="com.sukai.dictionarymanagement.city.entity.D404City">
-    <!--@mbg.generated-->
-    insert into d404_city
-    <trim prefix="(" suffix=")" suffixOverrides=",">
-      <if test="id != null">
+    <resultMap id="BaseResultMap" type="com.sukai.dictionarymanagement.city.entity.D404City">
+        <!--@mbg.generated-->
+        <!--@Table d404_city-->
+        <result column="id" jdbcType="BIGINT" property="id"/>
+        <result column="city_code" jdbcType="VARCHAR" property="cityCode"/>
+        <result column="city_name_cn" jdbcType="VARCHAR" property="cityNameCn"/>
+        <result column="city_name_dj" jdbcType="VARCHAR" property="cityNameDj"/>
+        <result column="city_name_en" jdbcType="VARCHAR" property="cityNameEn"/>
+        <result column="city_name_et" jdbcType="VARCHAR" property="cityNameEt"/>
+        <result column="city_start_date" jdbcType="TIMESTAMP" property="cityStartDate"/>
+        <result column="city_stop_date" jdbcType="TIMESTAMP" property="cityStopDate"/>
+        <result column="region_code" jdbcType="VARCHAR" property="regionCode"/>
+        <result column="city_name_ur" jdbcType="VARCHAR" property="cityNameUr"/>
+    </resultMap>
+    <sql id="Base_Column_List">
+        <!--@mbg.generated-->
         id,
-      </if>
-      <if test="cityCode != null">
         city_code,
-      </if>
-      <if test="cityNameCn != null">
         city_name_cn,
-      </if>
-      <if test="cityNameDj != null">
         city_name_dj,
-      </if>
-      <if test="cityNameEn != null">
         city_name_en,
-      </if>
-      <if test="cityNameEt != null">
         city_name_et,
-      </if>
-      <if test="cityStartDate != null">
         city_start_date,
-      </if>
-      <if test="cityStopDate != null">
         city_stop_date,
-      </if>
-      <if test="regionCode != null">
         region_code,
-      </if>
-      <if test="cityNameUr != null">
-        city_name_ur,
-      </if>
-    </trim>
-    <trim prefix="values (" suffix=")" suffixOverrides=",">
-      <if test="id != null">
-        #{id,jdbcType=BIGINT},
-      </if>
-      <if test="cityCode != null">
-        #{cityCode,jdbcType=VARCHAR},
-      </if>
-      <if test="cityNameCn != null">
-        #{cityNameCn,jdbcType=VARCHAR},
-      </if>
-      <if test="cityNameDj != null">
-        #{cityNameDj,jdbcType=VARCHAR},
-      </if>
-      <if test="cityNameEn != null">
-        #{cityNameEn,jdbcType=VARCHAR},
-      </if>
-      <if test="cityNameEt != null">
-        #{cityNameEt,jdbcType=VARCHAR},
-      </if>
-      <if test="cityStartDate != null">
-        #{cityStartDate,jdbcType=TIMESTAMP},
-      </if>
-      <if test="cityStopDate != null">
-        #{cityStopDate,jdbcType=TIMESTAMP},
-      </if>
-      <if test="regionCode != null">
-        #{regionCode,jdbcType=VARCHAR},
-      </if>
-      <if test="cityNameUr != null">
-        #{cityNameUr,jdbcType=VARCHAR},
-      </if>
-    </trim>
-  </insert>
+        city_name_ur
+    </sql>
+    <insert id="insert" parameterType="com.sukai.dictionarymanagement.city.entity.D404City">
+        <!--@mbg.generated-->
+        insert into d404_city (id, city_code, city_name_cn,
+                               city_name_dj, city_name_en, city_name_et,
+                               city_start_date, city_stop_date, region_code,
+                               city_name_ur)
+        values (#{id,jdbcType=BIGINT}, #{cityCode,jdbcType=VARCHAR}, #{cityNameCn,jdbcType=VARCHAR},
+                #{cityNameDj,jdbcType=VARCHAR}, #{cityNameEn,jdbcType=VARCHAR}, #{cityNameEt,jdbcType=VARCHAR},
+                #{cityStartDate,jdbcType=TIMESTAMP}, #{cityStopDate,jdbcType=TIMESTAMP}, #{regionCode,jdbcType=VARCHAR},
+                #{cityNameUr,jdbcType=VARCHAR})
+    </insert>
+    <insert id="insertSelective" parameterType="com.sukai.dictionarymanagement.city.entity.D404City">
+        <!--@mbg.generated-->
+        insert into d404_city
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="id != null">
+                id,
+            </if>
+            <if test="cityCode != null">
+                city_code,
+            </if>
+            <if test="cityNameCn != null">
+                city_name_cn,
+            </if>
+            <if test="cityNameDj != null">
+                city_name_dj,
+            </if>
+            <if test="cityNameEn != null">
+                city_name_en,
+            </if>
+            <if test="cityNameEt != null">
+                city_name_et,
+            </if>
+            <if test="cityStartDate != null">
+                city_start_date,
+            </if>
+            <if test="cityStopDate != null">
+                city_stop_date,
+            </if>
+            <if test="regionCode != null">
+                region_code,
+            </if>
+            <if test="cityNameUr != null">
+                city_name_ur,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="id != null">
+                #{id,jdbcType=BIGINT},
+            </if>
+            <if test="cityCode != null">
+                #{cityCode,jdbcType=VARCHAR},
+            </if>
+            <if test="cityNameCn != null">
+                #{cityNameCn,jdbcType=VARCHAR},
+            </if>
+            <if test="cityNameDj != null">
+                #{cityNameDj,jdbcType=VARCHAR},
+            </if>
+            <if test="cityNameEn != null">
+                #{cityNameEn,jdbcType=VARCHAR},
+            </if>
+            <if test="cityNameEt != null">
+                #{cityNameEt,jdbcType=VARCHAR},
+            </if>
+            <if test="cityStartDate != null">
+                #{cityStartDate,jdbcType=TIMESTAMP},
+            </if>
+            <if test="cityStopDate != null">
+                #{cityStopDate,jdbcType=TIMESTAMP},
+            </if>
+            <if test="regionCode != null">
+                #{regionCode,jdbcType=VARCHAR},
+            </if>
+            <if test="cityNameUr != null">
+                #{cityNameUr,jdbcType=VARCHAR},
+            </if>
+        </trim>
+    </insert>
 </mapper>

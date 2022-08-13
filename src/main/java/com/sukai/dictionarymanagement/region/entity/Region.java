@@ -1,10 +1,13 @@
 package com.sukai.dictionarymanagement.region.entity;
 
-import java.io.Serializable;
-import java.util.Date;
+import com.sukai.dictionarymanagement.city.entity.D404City;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+
+import java.io.Serializable;
+import java.util.Date;
+import java.util.List;
 
 @Data
 @AllArgsConstructor
@@ -25,6 +28,8 @@ public class Region implements Serializable {
     private String provinceCode;
 
     private String regionNameUr;
+
+    private List<D404City> cityList;
 
     private static final long serialVersionUID = 1L;
 }
