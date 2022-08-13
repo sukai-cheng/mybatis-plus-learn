@@ -43,4 +43,10 @@ public class UserController {
     public SysRole selectById(@RequestBody QueryWrapper queryWrapper) {
         return sysRoleMapper.selectById(queryWrapper.getId());
     }
+
+    @PostMapping("/SelectByUser")
+    @DS("master")
+    public List<SysRole> SelectByUser(@RequestBody QueryWrapper queryWrapper) {
+        return sysRoleMapper.selectBySysRole(queryWrapper);
+    }
 }

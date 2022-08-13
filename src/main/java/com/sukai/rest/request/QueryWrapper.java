@@ -11,4 +11,5 @@ import java.io.Serializable;
 @Data
 public class QueryWrapper implements Serializable {
     Long id;
+    String roleName;
 }
